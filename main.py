@@ -40,6 +40,16 @@ def get_slot_machine_spin(rows, cols, symbols):
     return columns
 
 
+def print_slot_machine(columns):
+    # Transpose
+    for row in range(len(columns[0])):
+        for i, col in enumerate(columns):
+            if i != (len(columns) - 1):
+                print(col[row], "|")
+            else:
+                print(col[row])
+
+
 def deposit():
     # Keep asking until input is valid
     while True:
