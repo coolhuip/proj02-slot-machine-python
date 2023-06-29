@@ -15,6 +15,26 @@ symbol_count = {
     "D": 8
 }
 
+symbol_value = {
+    "A": 5,
+    "B": 4,
+    "C": 3,
+    "D": 2
+}
+
+
+def check_winnings(cols, lines, bet, values):
+    for line in range(lines):
+        symbol = cols[0][line]
+        for col in cols:
+            symbol_to_check = col[line]
+            if symbol != symbol_to_check:
+                break
+        else:
+            winnings += values[symbol] * bet
+    
+    return winnings
+
 
 def get_slot_machine_spin(rows, cols, symbols):
     """
